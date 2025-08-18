@@ -24,14 +24,12 @@ app.post('/comparar', upload.fields([{ name: 'pdf1', maxCount: 1 }, { name: 'pdf
         const dataBuffer1 = fs.readFileSync(pdf1Path);
         const dataBuffer2 = fs.readFileSync(pdf2Path);
 
-        // Extrai texto e metadados dos PDFs
         const pdf1Data = await pdfParse(dataBuffer1);
         const pdf2Data = await pdfParse(dataBuffer2);
         
         const pdf1Text = pdf1Data.text.trim();
         const pdf2Text = pdf2Data.text.trim();
 
-        // --- Comparação de Conteúdo (Texto) ---
         const diffs = Diff.diffChars(pdf1Text, pdf2Text);
         let diferencasTexto = [];
 
@@ -44,18 +42,11 @@ app.post('/comparar', upload.fields([{ name: 'pdf1', maxCount: 1 }, { name: 'pdf
             });
         }
         
-        // --- Comparação de Layout (não visual) ---
-        let layoutDiferente = false;
         let diferencasLayout = [];
-        
         if (pdf1Data.numpages !== pdf2Data.numpages) {
-            layoutDiferente = true;
             diferencasLayout.push(`Número de páginas é diferente: PDF 1 tem ${pdf1Data.numpages} páginas, PDF 2 tem ${pdf2Data.numpages} páginas.`);
         }
-
-        // Você pode adicionar outras verificações baseadas em metadados
-        // Exemplo: if (pdf1Data.info.Creator !== pdf2Data.info.Creator) { ... }
-
+        
         res.json({
             diferencasTexto: diferencasTexto.length > 0 ? diferencasTexto : null,
             diferencasLayout: diferencasLayout.length > 0 ? diferencasLayout : null
@@ -65,7 +56,6 @@ app.post('/comparar', upload.fields([{ name: 'pdf1', maxCount: 1 }, { name: 'pdf
         console.error('Erro ao comparar PDFs:', error);
         res.status(500).json({ error: 'Erro ao processar os arquivos.' });
     } finally {
-        // Excluir arquivos temporários
         fs.unlink(pdf1Path, (err) => {
             if (err) console.error(`Erro ao remover arquivo temporário ${pdf1Path}:`, err);
         });

@@ -1,6 +1,7 @@
-/* Importa uma fonte moderna do Google Fonts */
+/* Importa a fonte 'Poppins' do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+/* Define as variáveis de cores para fácil personalização */
 :root {
     --primary-color: #5a7dff;
     --primary-color-dark: #3a5aff;
@@ -13,6 +14,7 @@
     --removed-color: #e53e3e; /* Vermelho para remoção */
 }
 
+/* Reset básico e configurações de fonte */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,6 +33,7 @@ body {
     line-height: 1.6;
 }
 
+/* Estilo para o título principal com animação */
 h1 {
     color: var(--primary-color);
     font-weight: 700;
@@ -39,19 +42,37 @@ h1 {
     animation: fadeInDown 1s ease-in-out;
 }
 
-#upload-form {
+/* Estilo do card principal (formulário e resultado) */
+#upload-form, #resultado {
     background: var(--card-background);
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px var(--shadow-color);
+    width: 100%;
+    max-width: 550px;
+    transition: transform 0.3s ease;
+}
+
+#upload-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 100%;
-    max-width: 550px;
     animation: fadeInUp 1s ease-in-out;
 }
 
+#resultado {
+    margin-top: 2rem;
+    max-width: 800px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#upload-form:hover, #resultado:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para os grupos de formulário */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -76,6 +97,7 @@ input[type="file"]:hover {
     border-color: var(--primary-color);
 }
 
+/* Estilo e animação para o botão */
 button {
     background-color: var(--primary-color);
     color: #fff;
@@ -97,19 +119,7 @@ button:hover {
     box-shadow: 0 6px 20px rgba(90, 125, 255, 0.5);
 }
 
-#resultado {
-    margin-top: 2rem;
-    background: var(--card-background);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px var(--shadow-color);
-    width: 100%;
-    max-width: 800px;
-    word-wrap: break-word; /* Garante que o texto se quebre em linhas */
-    white-space: pre-wrap;
-    animation: fadeIn 1s ease-in-out;
-}
-
+/* Estilos de subtítulos e parágrafos do relatório */
 #resultado h4 {
     color: var(--primary-color-dark);
     font-weight: 600;
@@ -135,8 +145,7 @@ button:hover {
     font-weight: 600;
 }
 
-/* ... (estilos existentes) */
-
+/* Estilo para o número da página no relatório */
 .page-number {
     display: block; /* Para quebra de linha */
     font-size: 1.25rem;
@@ -151,8 +160,7 @@ button:hover {
     border-left: 5px solid var(--primary-color-dark);
 }
 
-
-/* Animações de entrada */
+/* Animações de entrada para elementos da página */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -184,7 +192,7 @@ button:hover {
     }
 }
 
-/* Media Queries para Responsividade */
+/* Media Queries para Responsividade em telas menores */
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -197,4 +205,10 @@ button:hover {
     h1 {
         font-size: 1.8rem;
     }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
 }
+
