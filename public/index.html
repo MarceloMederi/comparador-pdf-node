@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de PDFs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Comparador de PDFs</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="pdf1">Primeiro PDF:</label>
+            <input type="file" id="pdf1" name="pdf1" accept=".pdf" required>
+        </div>
+        <div class="form-group">
+            <label for="pdf2">Segundo PDF:</label>
+            <input type="file" id="pdf2" name="pdf2" accept=".pdf" required>
+        </div>
+        <button type="submit">Comparar PDFs</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
