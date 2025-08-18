@@ -135,6 +135,23 @@ button:hover {
     font-weight: 600;
 }
 
+/* ... (estilos existentes) */
+
+.page-number {
+    display: block; /* Para quebra de linha */
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: #e0e8ff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border-left: 5px solid var(--primary-color-dark);
+}
+
+
 /* Animações de entrada */
 @keyframes fadeInDown {
     from {
