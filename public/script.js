@@ -22,6 +22,14 @@ document.getElementById('upload-form').addEventListener('submit', async (e) => {
 
         resultadoDiv.innerHTML = `<h3>Resultado da Comparação</h3>`;
 
+        // --- Adicionar texto informativo ---
+        // Verifique se existem diferenças de texto para exibir o texto explicativo
+        if (data.diferencasTexto && data.diferencasTexto.length > 0) {
+            resultadoDiv.innerHTML += `
+                <p>O texto em <span style="color: red; font-weight: bold;">vermelho e tachado</span> são as informações encontradas no primeiro PDF. O texto em <span style="color: green; font-weight: bold;">verde e sublinhado</span> são as informações encontradas no segundo PDF.</p>
+            `;
+        }
+
         // --- Exibir o Relatório de Texto ---
         resultadoDiv.innerHTML += `<h4>Diferenças de Texto:</h4>`;
         if (data.diferencasTexto && data.diferencasTexto.length > 0) {
