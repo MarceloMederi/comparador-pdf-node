@@ -33,22 +33,22 @@ Este é um projeto simples de comparação de arquivos PDF, desenvolvido com **H
 
 1. **Clone o repositório**:
 
-   ```bash
+```plaintext
    git clone https://github.com/seu-usuario/comparador-pdf.git
    cd comparador-pdf
-   ´´´
+```
 
 2. **Instale as dependências**:
-   ```bash
+```plaintext
     Dentro do diretório do projeto, execute:
     npm install
-   ´´´
+```
 
 3. **Inicie o servidor:**:
-   ```bash
+```plaintext
     Para rodar o servidor localmente, execute o seguinte comando:
     npm start
-   ´´´
+```
    O servidor estará rodando em http://localhost:3000.
 
 4. **Acesse o Projeto**:
@@ -57,6 +57,7 @@ Abra o navegador e vá para http://localhost:3000 para visualizar a página de c
 
 5. **Estrutura do projeto**:
 
+```plaintext
 COMPARADOR-PDF-NODE/
 │
 ├── node_modules/          # Pasta gerada automaticamente pelo npm para dependências do projeto
@@ -69,6 +70,7 @@ COMPARADOR-PDF-NODE/
 ├── package.json           # Arquivo de configuração do npm (dependências, scripts, etc.)
 ├── README.md              # Arquivo de documentação do projeto
 └── server.js              # Arquivo do servidor (Node.js) que processa a comparação dos PDFs
+```
 
 6. **Licença**
 
