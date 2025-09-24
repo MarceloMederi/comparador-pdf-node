@@ -69,13 +69,13 @@ COMPARADOR-PDF-NODE/
 ├── package-lock.json      # Arquivo gerado automaticamente para garantir versões consistentes de pacotes
 ├── package.json           # Arquivo de configuração do npm (dependências, scripts, etc.)
 ├── README.md              # Arquivo de documentação do projeto
-├── LICENSE                # Arquivo de licença
+├── LICENSE.txt            # Arquivo de licença
 └── server.js              # Arquivo do servidor (Node.js) que processa a comparação dos PDFs
 ```
 
 6. **Licença**
 
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE.txt) para mais detalhes.
 
 7. **Contribuição**
 
